@@ -1,0 +1,21 @@
+<?php $this->headTitle("Détails d'un contact") ?>
+
+<?php $this->headStyle()->captureStart(); ?>
+/*body {
+    background: beige;
+}*/
+<?php $this->headStyle()->captureEnd(); ?>
+
+<h2>Détails d'un contact</h2>
+
+<p>Prénom : <?=$this->escape($this->contact->getPrenom())?></p>
+
+<p>Nom : <?=$this->escape($this->contact->getNom())?></p>
+
+<?php if ($this->contact->getEmail()) : ?>
+<p>Email : <?=$this->escape($this->contact->getEmail())?></p>
+<?php endif; ?>
+
+<?php if ($this->contact->getTelephone()) : ?>
+<p>Téléphone : <?=$this->escape($this->contact->getTelephone())?></p>
+<?php endif; ?>

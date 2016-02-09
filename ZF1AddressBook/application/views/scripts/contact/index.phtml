@@ -1,0 +1,12 @@
+<h2>Liste des contacts</h2>
+
+<table class="table table-striped">
+    <?php foreach ($this->contacts as $c) : ?>
+    <tr>
+        <td><?=$this->escape($c->getPrenom())?> <?=$this->escape($c->getNom())?></td>
+        <td>
+            <a href="<?=$this->url(['controller'=>'contact', 'action'=>'show', 'id'=> $c->getId()], null, true)?>">Afficher</a>
+        </td>
+    </tr>
+    <?php endforeach; ?>
+</table>
