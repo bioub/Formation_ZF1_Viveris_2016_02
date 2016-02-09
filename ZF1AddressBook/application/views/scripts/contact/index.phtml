@@ -1,3 +1,9 @@
+<?php if ($this->flashMessages) : ?>
+<div class="alert alert-success">
+    <?=implode('<br>', $this->flashMessages)?>
+</div>
+<?php endif; ?>
+
 <h2>Liste des contacts</h2>
 
 <table class="table table-striped">

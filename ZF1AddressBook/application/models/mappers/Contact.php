@@ -56,4 +56,17 @@ class Application_Model_Mapper_Contact
         
         return $contact;
     }
+    
+    public function insert(Application_Model_Contact $contact)
+    {
+        $data = [];
+        $data['prenom'] = $contact->getPrenom();
+        $data['nom'] = $contact->getNom();
+        $data['email'] = $contact->getEmail();
+        $data['telephone'] = $contact->getTelephone();
+        
+        $id = $this->dbTable->insert($data);
+        
+        $contact->setId($id);
+    }
 }
