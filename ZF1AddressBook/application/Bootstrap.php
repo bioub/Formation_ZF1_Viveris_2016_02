@@ -36,4 +36,10 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap {
         );
         Zend_Validate_Abstract::setDefaultTranslator($translator);
     }
+    
+    protected function _initRegistry()
+    {
+        $contactMapper = new Application_Model_Mapper_Contact();
+        Zend_Registry::set('contactMapper', $contactMapper);
+    }
 }

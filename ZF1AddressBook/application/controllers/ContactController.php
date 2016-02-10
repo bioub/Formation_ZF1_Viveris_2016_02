@@ -31,7 +31,7 @@ class ContactController extends Zend_Controller_Action
     public function init()
     {
         /* Initialize action controller here */
-        $this->mapper = new Application_Model_Mapper_Contact();
+        $this->mapper = Zend_Registry::get('contactMapper');
         $this->_flashMessenger = $this->_helper
                                       ->getHelper('FlashMessenger');
         
